@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let options=["paper","scissors",'rock']
+        function getRandomInt(max){
+            return Math.floor(Math.random()*max);
+        }
+        let game=function(){
+            while(true){
+            cpu_option=options[getRandomInt(3)].toLowerCase();
+            user_option=prompt("Input you choice. paper/scissors/rock/quit").toLowerCase();
+            
+            while(user_option!="quit"){
+                if (cpu_option==user_option) {
+                    alert("Draw");
+                    break;
+                }
+                else if(!options.includes(user_option)){
+                    alert("what you just played?");
+                    break;
+                }
+                else if((user_option=="rock"&&cpu_option=="paper")||(user_option=="paper"&&cpu_option=="scissors")||(user_option=="scissors"&&cpu_option=="rock"))
+                {
+                    alert(`You lose, CPU plays ${cpu_option} and you playe ${user_option}`);
+                    break;
+                } 
+                else {
+                    alert(`You win, CPU plays ${cpu_option} and you played ${user_option}`);
+                    break;
+                }
+            }
+            if(user_option=="quit"){
+                alert("Thank you for playing");
+                break;
+            }
+        };
+    };
+        game();
+    </script>
+</body>
+</html>
