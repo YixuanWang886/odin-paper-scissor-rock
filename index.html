@@ -12,13 +12,17 @@
             return Math.floor(Math.random()*max);
         }
         let game=function(){
-            while(true){
+            i=0
+            let your_score=0;
+            let cpu_score=0;
+            while(i < 5){
             cpu_option=options[getRandomInt(3)].toLowerCase();
             user_option=prompt("Input you choice. paper/scissors/rock/quit").toLowerCase();
             
             while(user_option!="quit"){
                 if (cpu_option==user_option) {
                     alert("Draw");
+                    i++;
                     break;
                 }
                 else if(!options.includes(user_option)){
@@ -28,10 +32,14 @@
                 else if((user_option=="rock"&&cpu_option=="paper")||(user_option=="paper"&&cpu_option=="scissors")||(user_option=="scissors"&&cpu_option=="rock"))
                 {
                     alert(`You lose, CPU plays ${cpu_option} and you playe ${user_option}`);
+                    cpu_score+=1;
+                    i++;
                     break;
                 } 
                 else {
                     alert(`You win, CPU plays ${cpu_option} and you played ${user_option}`);
+                    your_score+=1;
+                    i++;
                     break;
                 }
             }
@@ -40,6 +48,7 @@
                 break;
             }
         };
+        alert( `Game finished! you get ${your_score} pints  while cpu get ${cpu_score} points !!!`)
     };
         game();
     </script>
