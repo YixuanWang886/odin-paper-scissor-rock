@@ -1,0 +1,26 @@
+img{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 10%;
+}
+#button_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5vh;
+}
+#page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#player,#cpu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

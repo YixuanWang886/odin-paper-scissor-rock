@@ -3,54 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let options=["paper","scissors",'rock']
-        function getRandomInt(max){
-            return Math.floor(Math.random()*max);
-        }
-        let game=function(){
-            i=0
-            let your_score=0;
-            let cpu_score=0;
-            while(i < 5){
-            cpu_option=options[getRandomInt(3)].toLowerCase();
-            user_option=prompt("Input you choice. paper/scissors/rock/quit").toLowerCase();
-            
-            while(user_option!="quit"){
-                if (cpu_option==user_option) {
-                    alert("Draw");
-                    i++;
-                    break;
-                }
-                else if(!options.includes(user_option)){
-                    alert("what you just played?");
-                    break;
-                }
-                else if((user_option=="rock"&&cpu_option=="paper")||(user_option=="paper"&&cpu_option=="scissors")||(user_option=="scissors"&&cpu_option=="rock"))
-                {
-                    alert(`You lose, CPU plays ${cpu_option} and you playe ${user_option}`);
-                    cpu_score+=1;
-                    i++;
-                    break;
-                } 
-                else {
-                    alert(`You win, CPU plays ${cpu_option} and you played ${user_option}`);
-                    your_score+=1;
-                    i++;
-                    break;
-                }
-            }
-            if(user_option=="quit"){
-                alert("Thank you for playing");
-                break;
-            }
-        };
-        alert( `Game finished! you get ${your_score} pints  while cpu get ${cpu_score} points !!!`)
-    };
-        game();
-    </script>
+   <div id="page">
+    <div id="header">
+        <h1>Paper Scissors and Rock</h1>
+   </div>
+   <div id="round">Round 0</div>
+   <div  id="button_container">
+    <div id="player"> 
+        <p>Your Choice</p>
+        <div id="player_opt">
+        <button id="paper"><img src="image/paper.png" alt="paper"></button>
+        <button id="scissors"><img src="image/scissors.png" alt="scissors"></button>
+        <button id="rock"><img src="image/rock.png" alt="rock"></button></div>
+    </div>
+    <p>VS</p>
+    <div id="cpu">
+        <p>CPU Choice</p>
+        <img src="image/Emblem-question-yellow.svg" alt="cpu_opt" id="cpu_opt">
+    </div>
+    
+   </div>
+   <div id="result">
+   </div>
+    <div id="score">
+    </div>
+    <script src="./app.js" defer></script>
 </body>
 </html>
+
